@@ -1,7 +1,4 @@
-"use client"
-
-import { SignInButton, UserButton } from "@clerk/nextjs"
-import { Authenticated ,Unauthenticated} from "convex/react"
+import { HeaderActions } from "@/app/header-actions"
 import { ModeToggle } from "./ui/ModeToggle"
 import Image from "next/image"
 
@@ -13,16 +10,9 @@ export function Header(){
                 <Image src="/logo.png" className="rouned-full" width={40} height={40} alt="an image of a brain"/>
                   BrainVault
             </div>
-            <div>
-            <Unauthenticated>
-                    <SignInButton />
-                  </Unauthenticated>
-                  <Authenticated>
-                    <div className="flex gap-4">
-                    <ModeToggle/>
-                    <UserButton />
-                    </div>
-                  </Authenticated>
+            <div className="flex gap-4 items-center">
+                <ModeToggle/>
+                <HeaderActions/>
                   </div>
                   </div>
         </div>
